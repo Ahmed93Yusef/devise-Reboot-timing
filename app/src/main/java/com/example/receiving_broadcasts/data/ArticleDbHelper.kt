@@ -1,13 +1,15 @@
-package com.example.receiving_broadcasts
+package com.example.receiving_broadcasts.data
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.receiving_broadcasts.util.Constant
 
-class ArticleDbHelper(context: Context): SQLiteOpenHelper(context,Constant.DBNAME,null,Constant.DBVERSION) {
+class ArticleDbHelper(context: Context): SQLiteOpenHelper(context,
+    Constant.DBNAME,null,
+    Constant.DBVERSION) {
     override fun onCreate(p0: SQLiteDatabase?) {
         val sql = "CREATE TABLE ${Constant.TABLE_NAME}("+
-                "${Constant.ID} INTEGER PRIMARY KEY," +
                 "${Constant.TIME} TEXT)"
         p0?.execSQL(sql)
     }
